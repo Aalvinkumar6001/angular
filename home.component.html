@@ -1,0 +1,38 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>subjectId</th>
+        <th>subtitle</th>
+        <th>durationInHours</th>
+        <th>references</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of subjects" >
+        <td >{{ subject.subjectId }}</td>
+        <td scope="row" >{{ subject.subtitle }}</td>
+        <td>{{ subject.durationInHours }}</td>
+        <td>
+            <thead>
+            <tr>
+                <th>bookId</th>
+                <th>title</th>
+                <th>price</th>
+                <th>volume</th>
+                <th>publishDate</th>
+              </tr>
+              </thead>
+              <tbody>
+              <td>{{ subject.references.bookId }}</td>
+              <td>{{ subject.references.title }} </td> 
+              <td>{{ subject.references.price }} </td> 
+              <td>{{ subject.references.volume }} </td>
+              <td> {{ subject.references.publishDate }}</td>
+            </tbody>
+        </td>
+        <td><button  type="button" (click)="onSelect(book)" class="glyphicon glyphicon-check">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  
