@@ -1,0 +1,8 @@
+<button  type="button" (click)="onSelectbook()" >addbook</button>
+<button  type="button" (click)="onSelectsubject()" >addsubject</button>
+<div  [hidden]="!mybook">
+  <app-addbook></app-addbook>
+</div>
+<div  [hidden]="!mysubject">
+<app-addsubject></app-addsubject>
+</div>

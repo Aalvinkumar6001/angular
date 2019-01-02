@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    
+    
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(subjectModel)" >
+    {{userForm.value | json}}
+    <hr/>
+    
+    <div class="form-group">
+      <label>subject id</label>
+      <input type="number" #subjectId="ngModel" placeholder="subjectId" required class="form-control" name="subjectId" [(ngModel)]="subjectModel.subjectId">
+    <h1> </h1>
+    </div>
+    <div class="form-group">
+        <label>subject title</label>
+    subTitle: string;
+    <input type="text" #subtitle="ngModel" placeholder="subtitle" required class="form-control" name="v" [(ngModel)]="subjectModel.subtitle">
+      </div>
+      <div class="form-group">
+          <label>subject durations</label>
+          <input type="number" #durationInHours="ngModel" placeholder="durationInHours" required class="form-control" name="durationInHours" [(ngModel)]="subjectModel.durationInHours">
+        </div>
+        <div class="form-group" >
+            <label>Add the references books</label>
+        <select  class="custom-select" [(ngModel)]="subjectModel.references" name="references"  #references="ngModel">
+          <option value="default" disabled selected>select a book</option>
+          <option *ngFor="let item of booksarray" [ngValue]="item">{{item.title}}</option>
+        </select>
+      </div>
+      
+  
+
+    <button class="btn btn-primary"  type="submit">Submit subject</button>
+
+  </form>
+
+</div>
